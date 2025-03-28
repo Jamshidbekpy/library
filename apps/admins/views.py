@@ -35,13 +35,18 @@ class OrdersListAPIView(ListAPIView):
     serializer_class = OrderSerializer
 
 
-from .serializers import StatisticSerializer
+from django.db.models import Sum, F
 
 
 class StatisticAPIView(APIView):
     permission_classes = [IsAuthenticated, IsAdmin]
 
     def get(self, request):
-
-        statistic = StatisticSerializer()
-        return Response(statistic.data, status=status.HTTP_200_OK)
+        return Response(
+            {
+                "user_count": MyUser.objects.count(),
+                "sold_books_price": Order.objects.filter(is_paid=True).aggregate(
+                    total_price=Sum(F("book__price") * F("quantity"))
+                ),
+            }
+        )
