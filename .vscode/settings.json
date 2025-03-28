@@ -1,0 +1,45 @@
+{
+    "material-icon-theme.folders.customClones": [
+      {
+        "name": "users-auth",
+        "base": "admin",
+        "color": "blue-500",
+        "lightColor": "blue-700",
+        "folderNames": ["accounts"],
+        "rootFolderNames": ["apps"]
+      },
+      {
+        "name": "instructors-profile",
+        "base": "admin",  
+        "color": "purple-400",
+        "lightColor": "purple-600",
+        "folderNames": ["admins"],
+        "rootFolderNames": ["apps"]
+      },
+      {
+        "name": "students-progress",
+        "base": "lib",  
+        "color": "cyan-900",
+        "lightColor": "cyan-600",
+        "folderNames": ["books"],
+        "rootFolderNames": ["apps"]
+      },
+      {
+        "name": "orders-management",
+        "base": "cart",  
+        "color": "pink-800",
+        "lightColor": "pink-700",
+        "folderNames": ["orders"],
+        "rootFolderNames": ["apps"]
+      },
+      {
+        "name": "wishlist",
+        "base": "folder",  
+        "color": "red-500",
+        "lightColor": "red-700",
+        "folderNames": ["wishlist"],
+        "rootFolderNames": ["apps"]
+      }
+
+    ]
+  }
