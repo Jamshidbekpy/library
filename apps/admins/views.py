@@ -47,6 +47,6 @@ class StatisticAPIView(APIView):
                 "user_count": MyUser.objects.count(),
                 "sold_books_price": Order.objects.filter(is_paid=True).aggregate(
                     total_price=Sum(F("book__price") * F("quantity"))
-                ),
+                ).get("total_price"),
             }
         )
